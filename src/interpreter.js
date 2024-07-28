@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 import keywords from "./keywords.js"
+import methods from "./methods.js"
 import * as errors from "./errors.js";
 
 export function execute(argv) {
@@ -68,6 +69,11 @@ function translateCode(content) {
         for (const [key, value] of Object.entries(keywords)) {
             const regex = new RegExp(`\\b${key}\\b`, 'g');
             translated = translated.replace(regex, value);
+        }
+
+        for (const [key, value] of Object.entries(methods)) {
+            const regex = new RegExp(`\\b${key}\\(([^)]*)\\)`, 'g');
+            translated = translated.replace(regex, `${value}($1)`);
         }
     } catch (err) {
         throw new Error(errors.ERROR_TRANSLATE + err.message);
