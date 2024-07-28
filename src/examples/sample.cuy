@@ -1,0 +1,2 @@
+variable nombre asignar "Juan"
+console.log(nombre)
