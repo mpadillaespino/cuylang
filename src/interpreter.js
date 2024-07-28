@@ -36,7 +36,10 @@ function evaluateFile(filePath) {
         const code = translateCode(content)
         if (code) {
             try {
-                eval(code);
+                let context = Object.entries(methods)
+                    .map(([k, v]) => `const ${k} = ${v.toString()};`)
+                    .join('\n') + '\n' + code;
+                eval(context);
             } catch (err) {
                 throw new Error(errors.ERROR_EVALUATE + err.message);
             }
@@ -49,7 +52,7 @@ function translateFile(filePath) {
     if (content) {
         const code = translateCode(content)
         if (code) {
-            console.log('Código traducido:\n', code);
+            console.log('Código traducido:\n' + code);
         }
     }
 }
@@ -69,11 +72,6 @@ function translateCode(content) {
         for (const [key, value] of Object.entries(keywords)) {
             const regex = new RegExp(`\\b${key}\\b`, 'g');
             translated = translated.replace(regex, value);
-        }
-
-        for (const [key, value] of Object.entries(methods)) {
-            const regex = new RegExp(`\\b${key}\\(([^)]*)\\)`, 'g');
-            translated = translated.replace(regex, `${value}($1)`);
         }
     } catch (err) {
         throw new Error(errors.ERROR_TRANSLATE + err.message);

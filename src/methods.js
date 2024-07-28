@@ -1,3 +1,4 @@
 export default {
-    'florear': 'console.log'
+    florear: (v) => console.log(v),
+    esFloro: (v) => typeof v === "string"
 };

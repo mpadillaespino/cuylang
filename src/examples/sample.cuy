@@ -1,2 +1,4 @@
 variable nombre asignar "Juan"
 florear(nombre)
+florear(esFloro(nombre))
+florear("es cadena??? " + esFloro(nombre))
