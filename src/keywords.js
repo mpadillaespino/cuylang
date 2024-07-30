@@ -1,11 +1,18 @@
 export default {
-    'variable': 'let',
-    'constante': 'const',
+    // Data types
+    'firme': 'true',
+    'bamba': 'false',
     'nulo': 'null',
     'indefinido': 'undefined',
+    // Variables
+    'variable': 'let',
+    'constante': 'const',
+    // Assignment operators
+    '=': '=',
+    //Logic operators
     'y': '&&',
     'o': '||',
-    'no': '!',
+    //Comparison operators
     'igual': '==',
     'estrictamente_igual': '===',
     'diferente': '!=',
@@ -14,14 +21,16 @@ export default {
     'menor_que': '<',
     'mayor_o_igual_que': '>=',
     'menor_o_igual_que': '<=',
-    'asignar': '=',
+    // Statements
     'si': 'if',
+    'osi': 'else if',
     'sino': 'else',
-    'para': 'for',
+    'pa': 'for',
     'mientras': 'while',
     'hacer': 'do',
     'interrumpir': 'break',
-    'continuar': 'continue',
-    'funcion': 'function',
-    'retornar': 'return',
+    'seguir': 'continue',
+    // Functions
+    'chamba': 'function',
+    'devolver': 'return'
 };
