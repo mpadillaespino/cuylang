@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import { createInterface } from 'readline';
 import path from 'path';
 import keywords from "./keywords.js"
 import methods from "./methods.js"
@@ -27,7 +28,41 @@ export function execute(argv) {
 }
 
 function startShellMode() {
-    console.log('modo consola');
+    const rl = createInterface({
+        input: process.stdin,
+        output: process.stdout,
+        prompt: 'Cuylang > '
+    });
+
+    console.log('Modo interactivo iniciado. Escribe "chau" para terminar.');
+
+    let lines = [];
+    rl.prompt();
+
+    rl.on('line', (line) => {
+        if (line.trim() === 'chau') {
+            rl.close();
+            return;
+        }
+
+        const code = translateCode(line)
+        if (code) {
+            try {
+                let context = Object.entries(methods)
+                    .map(([k, v]) => `const ${k} = ${v.toString()};`)
+                    .join('\n') + '\n' + lines.join('\n') + '\n' + code;
+                eval(context);
+                lines.push(code);
+            } catch (err) {
+                console.error(errors.ERROR_EVALUATE + err.message);
+            }
+        }
+
+        rl.prompt();
+    }).on('close', () => {
+        console.log('Modo interactivo terminado.');
+        process.exit(0);
+    });
 }
 
 function evaluateFile(filePath) {
