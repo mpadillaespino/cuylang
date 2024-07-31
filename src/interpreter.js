@@ -52,7 +52,9 @@ function startShellMode() {
                     .map(([k, v]) => `const ${k} = ${v.toString()};`)
                     .join('\n') + '\n' + lines.join('\n') + '\n' + code;
                 eval(context);
-                lines.push(code);
+                if (!code.includes('florear(') && !code.includes('limpiarParabrisas(')) {
+                    lines.push(code);
+                }
             } catch (err) {
                 console.error(errors.ERROR_EVALUATE + err.message);
             }
