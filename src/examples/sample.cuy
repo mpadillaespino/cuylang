@@ -6,6 +6,16 @@
 //florear(esBamba(false))
 //florear(bambear(true))
 //limpiarParabrisas()
-florear("hola")
-jatear(3000)
-florear("mundo")
+//lorear("hola")
+//jatear(3000)
+//florear("mundo")
+//a igual b
+//a igualito b
+//florear(bambear(bamba))
+
+chamba saludar() {
+    regresar "Habla, causa!";
+}
+
+florear(esChamba(saludar))
+florear(esChamba("saludar"))

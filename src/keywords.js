@@ -14,7 +14,7 @@ export default {
     'o': '||',
     //Comparison operators
     'igual': '==',
-    'estrictamente_igual': '===',
+    'igualito': '===',
     'diferente': '!=',
     'estrictamente_diferente': '!==',
     'mayor_que': '>',
@@ -32,5 +32,5 @@ export default {
     'seguir': 'continue',
     // Functions
     'chamba': 'function',
-    'devolver': 'return'
+    'regresar': 'return'
 };

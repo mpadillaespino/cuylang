@@ -14,7 +14,7 @@
 
 CuyLang es un [esolang](https://en.wikipedia.org/wiki/Esoteric_programming_language) (lenguaje de programación esotérico) en el que las palabras clave y métodos están inspirados en la [jerga peruana](https://www.wikilengua.org/index.php/Jerga_juvenil/Per%C3%BA). Escrito por un desarrollador Java pero basado en JavaScript, toma referencias de dos esolangs basados en Python. [⁽¹⁾](https://github.com/aadhithya/rajiniPP) [⁽²⁾](https://github.com/WhiteHeadbanger/Lunfardo) Además, su logo y su mascota comparten similitudes con los del lenguaje Go. 
 
-Este proyecto es un pasatiempo y no está destinado a usarse para el desarrollo de software serio, sino más bien para divertirse.
+Este proyecto es un pasatiempo, puede estar lleno de bugs y no está destinado a usarse para el desarrollo de software serio, sino más bien para divertirse.
 
 ## Requisitos
 
@@ -55,12 +55,13 @@ Nota: las funciones predefinidas de CuyLang no serán traducidas.
 
 ## Características
 
-Por estar basado en JavaScript, hereda todas sus características, ventajas y desventajas. desventajas. Esto permite escribir código tanto en JavaScript como en CuyLang al mismo tiempo. Algunas de las características del lenguaje que se han escrito/sobreescrito son:
+Por estar basado en JavaScript, hereda todas sus características, ventajas y desventajas. Esto permite escribir código tanto en JavaScript como en CuyLang al mismo tiempo. Algunas de las características del lenguaje que se han escrito/sobreescrito son:
 
 ### Tipos de datos
 
 - `firme`: true (boolean)
 - `bamba`: false (boolean)
+- `floro`: string
 - `nulo`: null
 - `indefinido`: undefined
 
@@ -88,7 +89,7 @@ Por estar basado en JavaScript, hereda todas sus características, ventajas y de
 
 - **Comparación**:
     - `igual`: ==
-    - `estrictamente_igual`: ===
+    - `igualito`: ===
     - `diferente`: !=
     - `estrictamente_diferente`: !==
     - `mayor_que`: >
@@ -151,20 +152,24 @@ Por estar basado en JavaScript, hereda todas sus características, ventajas y de
 
 ### Funciones predefinidas
 
-*   **florear(**`[identificador | valor]`**):**   
+*   `bambear([identificador | valor])`   
+    Devuelve `firme` si es `bamba` y viceversa.
+*   `esBamba([identificador | valor])`   
+    Determina si el argumento es `bamba` o no.
+*   `esChamba([identificador | valor])`   
+    Determina si el argumento es una `chamba` o no.
+*   `esFirme([identificador | valor])`   
+    Determina si el argumento es `firme` o no.
+*   `esFloro([identificador | valor])`   
+    Determina si el argumento es un `floro` o no.
+*   `florear([identificador | valor])`   
     Imprime un valor en la consola.
-*   **esFloro(**`[identificador | valor]`**):**   
-    Determina si es una cadena o no.
-*   **esFirme(**`[identificador | valor]`**):**   
-    Determina si es verdadero o no.
-*   **esBamba(**`[identificador | valor]`**):**   
-    Determina si es falso o no.
-*   **bambear(**`[identificador | valor]`**):**   
-    Retorna verdadero si es falso y viceversa.
-*   **jatear(**`[identificador | valor]`**):**   
-    Detiene la ejecución por el tiempo indicado en ms.
-*   **limpiarParabrisas():**  
+*   `jatear([identificador | valor])`   
+    Detiene la ejecución por el tiempo indicado en milisegundos.
+*   `limpiarParabrisas()`  
     Limpia la consola.
+*   `tinka([valor_inicial], [valor_final])`   
+    Devuelve un número entre el rango ingresado considerando los extremos.
 
 ## ¿Cómo contribuir?
 
