@@ -153,7 +153,7 @@ Por estar basado en JavaScript, hereda todas sus características, ventajas y de
 ### Funciones predefinidas
 
 *   `bambear([identificador | valor])`   
-    Devuelve `firme` si es `bamba` y viceversa.
+    Devuelve verdadero si es falso y viceversa.
 *   `esBamba([identificador | valor])`   
     Determina si el argumento es `bamba` o no.
 *   `esChamba([identificador | valor])`   
