@@ -7,5 +7,7 @@ export default {
     florear: (v) => console.log(v),
     jatear: (v) => Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, v),
     limpiarParabrisas: () => console.clear(),
-    tinka: (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min))
+    tinka: (min, max) => Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min)),
+    uyLaCagaste: (v) => {throw new Error(v)},
+    estaCalato: (v) =>  v === undefined || v === null || v === ""    
 };
